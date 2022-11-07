@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface UserService extends BaseService{
     List<GetAllUsersResponse> getAll();
-    void add(CreateUserRequest createUserRequest);
+    void add(CreateUserRequest createUserRequest) throws Exception;
     void delete(DeleteUserRequest deleteUserRequest);
     void update(UpdateUserRequest updateUserRequest);
 }

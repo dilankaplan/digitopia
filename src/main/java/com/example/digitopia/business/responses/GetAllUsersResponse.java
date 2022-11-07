@@ -10,8 +10,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class GetAllUsersResponse {
     private int id;
+    private
     private String fullName;
     private String email;
+    private String normalizedName;
 
 
 }

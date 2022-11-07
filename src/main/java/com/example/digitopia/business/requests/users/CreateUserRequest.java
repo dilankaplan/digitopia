@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 public class CreateUserRequest {
    private String fullName;
    private String email;
-
+   private String status;
+   private String normalizedName;
 
 }

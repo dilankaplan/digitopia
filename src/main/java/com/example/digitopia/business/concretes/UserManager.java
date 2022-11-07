@@ -40,9 +40,17 @@ public class UserManager implements UserService {
     }
 
     @Override
-    public void add(CreateUserRequest createUserRequest) {
+    public void add(CreateUserRequest createUserRequest) throws Exception {
         User user = new User();
+        user.setStatus(createUserRequest.getStatus());
         user.setFullName(createUserRequest.getFullName());
+        if(this.userRepository.existsByEmail(createUserRequest.getEmail())) {
+            throw new Exception("This email adress has already exist");
+        }
+        else {
+            user.setEmail(createUserRequest.getEmail());
+        }
+        user.setNormalizedName(createUserRequest.getNormalizedName());
         this.userRepository.save(user);
     }
 

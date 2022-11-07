@@ -26,7 +26,7 @@ public class UsersController {
     }
     @PostMapping("/add")
 
-    public void add(@RequestBody CreateUserRequest createUserRequest){
+    public void add(@RequestBody CreateUserRequest createUserRequest) throws Exception {
          this.userService.add(createUserRequest);
     }
     @DeleteMapping("/delete")
